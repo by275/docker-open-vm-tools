@@ -4,7 +4,6 @@
 [ -e /root/.ssh/authorized_keys ] || touch /root/.ssh/authorized_keys
 
 PUBLIC_KEY=$(cat /root/.ssh/open-vm-tools.pub)
-grep -q -F "$PUBLIC_KEY" /root/.ssh/authorized_keys || echo $PUBLIC_KEY >> /root/.ssh/authorized_keys
+grep -q -F "$PUBLIC_KEY" /root/.ssh/authorized_keys || echo "$PUBLIC_KEY" >> /root/.ssh/authorized_keys
 
 exec /usr/bin/vmtoolsd
-

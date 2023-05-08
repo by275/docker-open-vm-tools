@@ -1,4 +1,4 @@
-# docker-xpenology-open-vm-tools
+# docker-open-vm-tools
 
 This Docker container allows you to run open-vm-tools on a Xpenology DSM running on VMware ESXi.
 
@@ -16,7 +16,10 @@ This Docker container allows you to run open-vm-tools on a Xpenology DSM running
 
 SSH into your DSM and run this command.
 
-```
-sudo mkdir /root/.ssh
-sudo docker run -d --restart=always --net=host -v /root/.ssh/:/root/.ssh/ --name open-vm-tools yalewp/xpenology-open-vm-tools
+```sh
+mkdir /root/.ssh
+docker run -d --restart=always --net=host \
+  -v /root/.ssh/:/root/.ssh/ \
+  --name open-vm-tools \
+  ghcr.io/by275/open-vm-tools{debian,ubuntu}
 ```

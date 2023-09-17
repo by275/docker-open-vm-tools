@@ -1,5 +1,7 @@
 #!/bin/sh
 
+/usr/bin/vmtoolsd -v
+
 [ -e /root/.ssh/open-vm-tools ] || ssh-keygen -t rsa -f /root/.ssh/open-vm-tools -q -P ""
 [ -e /root/.ssh/authorized_keys ] || touch /root/.ssh/authorized_keys
 

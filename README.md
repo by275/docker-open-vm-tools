@@ -21,5 +21,5 @@ mkdir /root/.ssh
 docker run -d --restart=always --net=host \
   -v /root/.ssh/:/root/.ssh/ \
   --name open-vm-tools \
-  ghcr.io/by275/open-vm-tools{debian,ubuntu}
+  ghcr.io/by275/open-vm-tools:{debian,ubuntu}
 ```

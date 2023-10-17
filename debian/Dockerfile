@@ -9,8 +9,9 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         openssh-client \
         open-vm-tools \
+        tini \
     && \
     chmod 755 /entrypoint.sh /usr/sbin/shutdown && \
     rm -rf /var/lib/apt/lists/*
 
-CMD [ "/entrypoint.sh" ]
+CMD ["/usr/bin/tini", "--", "/entrypoint.sh"]

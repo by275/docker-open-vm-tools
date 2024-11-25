@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 LABEL maintainer="by275"
-LABEL org.opencontainers.image.source https://github.com/by275/docker-open-vm-tools
+LABEL org.opencontainers.image.source=https://github.com/by275/docker-open-vm-tools
 
 COPY root/ /
 
